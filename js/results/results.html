@@ -1,0 +1,11 @@
+<nav-directive></nav-directive>
+
+
+<ul ng-repeat="winery in wineries">
+  <li>
+    <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
+    Name: {{ winery.name }}
+    Location: {{ winery.location.city }},
+      {{ winery.location.state }}
+  </li>
+</ul>
