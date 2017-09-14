@@ -4,21 +4,26 @@
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./js/results/results.css">
    <title>Wineries Finder</title>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjuTUhuayPkBzn87KbHfe6vDEESBUy0_s&libraries=places" async defer charset="utf-8"></script>
  </head>
  <body>
 
 
-
+<nav-directive></nav-directive>
 <ui-view></ui-view>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+
 <script src="/app.js"></script>
 <script src="/js/home/homeCtrl.js"></script>
 <script src="/js/yelpApiService.js"></script>
 <script src="/js/results/resultsCtrl.js"></script>
 <script src="/js/nav/nav.js"></script>
+<script src="/js/details/detailsCtrl.js"></script>
+
 </body>
 </html>
 

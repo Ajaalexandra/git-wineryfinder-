@@ -1,11 +1,17 @@
-<nav-directive></nav-directive>
+<section>
+  <div id="map_container">
+    <div id="map"></div>
+  </div>
 
+  <ul class="winery-list">
+    <li ng-repeat="winery in wineries">
 
-<ul ng-repeat="winery in wineries">
-  <li>
-    <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
-    Name: {{ winery.name }}
-    Location: {{ winery.location.city }},
-      {{ winery.location.state }}
-  </li>
-</ul>
+      <div ui-sref="details({winePlace:winery.id})">
+        <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
+        Name: {{ winery.name }}
+        Location: {{ winery.location.city }},
+        {{ winery.location.state }}
+      </div>
+    </li>
+  </ul>
+</section>

@@ -12,11 +12,11 @@ $stateProvider
   templateUrl: '/js/results/results.html',
   controller:'resultsCtrl'
 })
-
-.state('searchName', {
-  url: '/searchName',
-  templateUrl: '/js/map/map.html',
-  controller:'mapCtrl'
+//
+.state('details', {
+  url: '/details/:winePlace',
+  templateUrl: './js/details/details.html',
+  controller:'detailsCtrl'
 })
 
 
