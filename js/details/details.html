@@ -1,9 +1,14 @@
 <!-- {{reviews.}} -->
+<center>
+
 <ul ng-repeat= "review in reviews">
   <li>Review: {{review.text}}</li>
 
-  Url: <a target="_blank" href="{{review.url}}">{{review.url}}</a>
+  <a target="_blank" class="detailURL" href="{{review.url}}">More Info.</a>
 
   <li>Rating: {{review.rating}}</li>
   <br>
 </ul>
+
+<button type="button" name="button"  ui-sref="results({location: cityQuery})"> Back to map</button>
+</center>

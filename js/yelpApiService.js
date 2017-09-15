@@ -2,6 +2,11 @@ angular.module('myApp').service('yelpApiService', function($http){
 
 this.test = "hello world";
 
+this.cityQuery;
+
+this.changeCity = function(city) {
+  this.cityQuery = city;
+}
 
 var client_secret = 'client_secret= PmJ8zLhWQ82TlRjnqrvmzkZm6KMO5dVlTcAtQ6sxifLL9BHCxJDax6WiylZe2WaS';
   var client_id = 'client_id=vGZGeVRetP7WWU9j6tldtg';

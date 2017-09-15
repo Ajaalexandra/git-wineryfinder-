@@ -1,4 +1,7 @@
 <section>
+
+  <input class="searchBar" type="text" ng-model="searchTerm" placeholder="Search By Location">
+  <a   ui-sref="results({location: searchTerm})">&gt;</a>
   <div id="map_container">
     <div id="map"></div>
   </div>
@@ -8,9 +11,12 @@
 
       <div ui-sref="details({winePlace:winery.id})">
         <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
-        Name: {{ winery.name }}
-        Location: {{ winery.location.city }},
+        <center>
+      {{ winery.name }}
+      <br>
+      {{ winery.location.city }},
         {{ winery.location.state }}
+      </center>
       </div>
     </li>
   </ul>

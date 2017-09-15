@@ -27,14 +27,14 @@ angular.module('myApp').controller('resultsCtrl', function($scope, $stateParams,
 					lat: 32.7,
 					lng: -96.8
 				},
-				zoom: 15
+				zoom: 12
 			})
 			infoWindow = new google.maps.InfoWindow;
 		// });
 		var pos;
     var lat = '';
     var lng = '';
-    var address = yelpApiService.position;
+    var address = yelpApiService.cityQuery;
     geocoder.geocode( { 'address': $stateParams.location}, function(results, status) {
       // console.log('location:', $stateParams.location);
       if (status == google.maps.GeocoderStatus.OK) {
@@ -44,7 +44,7 @@ angular.module('myApp').controller('resultsCtrl', function($scope, $stateParams,
            lat: lat,
            lng: lng
          }
-         console.log(pos);
+        //  console.log(pos);
        } else {
         alert("Geocode was not successful for the following reason: " + status);
       }
@@ -64,8 +64,8 @@ angular.module('myApp').controller('resultsCtrl', function($scope, $stateParams,
 		        var service = new google.maps.places.PlacesService(map);
 		        service.nearbySearch({
 		          location: pos,
-		          radius: 500,
-		          keyword: 'wineries'
+		          radius: 9000,
+		          keyword: 'winery'
 		        }, callback);
 
 	            infoWindow.setPosition(pos);
@@ -87,12 +87,13 @@ angular.module('myApp').controller('resultsCtrl', function($scope, $stateParams,
 		        infoWindow.open(map);
 		      }
 	var markers = [];
-
+var wineGlass = 'icons8.png';
 
 	function callback(results, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 		  for (var i = 0; i < results.length; i++) {
 		    createMarker(results[i]);
+
 		  }
 		}
 	}
@@ -103,8 +104,10 @@ angular.module('myApp').controller('resultsCtrl', function($scope, $stateParams,
 		  map: map,
 		  title: place.name,
 		  animation: google.maps.Animation.DROP,
-		  position: placeLoc
+		  position: placeLoc,
+      icon: wineGlass
 		});
+
 		var infowindow = new window.google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker, 'click', function() {

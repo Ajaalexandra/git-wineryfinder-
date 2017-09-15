@@ -9,6 +9,8 @@ yelpApiService.getYelpReviews(id).then(function(response){
   console.log('detailsCtrl response:', response.data.reviews);
   $scope.reviews = response.data.reviews;
 })
+$scope.cityQuery = yelpApiService.cityQuery;
+console.log($scope.cityQuery);
 
 
 
