@@ -1,7 +1,7 @@
 <section>
 
   <input class="searchBar" type="text" ng-model="searchTerm" placeholder="Search By Location">
-  <a   ui-sref="results({location: searchTerm})">&gt;</a>
+  <button   ng-click="setSearchLocation(searchTerm)">Search!</button>
   <div id="map_container">
     <div id="map"></div>
   </div>
@@ -9,7 +9,7 @@
   <ul class="winery-list">
     <li ng-repeat="winery in wineries">
 
-      <div ui-sref="details({winePlace:winery.id})">
+      <div ng-click="setid(winery.id)" ui-sref="details">
         <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
         <center>
       {{ winery.name }}

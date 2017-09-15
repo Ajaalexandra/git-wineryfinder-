@@ -5,9 +5,12 @@
 
 <div class="home-container">
 
+
  <input class="searchBar" type="text" ng-model="searchTerm" placeholder="Search By Location">
-  <a  id="submit" ng-click="changeState(searchTerm)" ui-sref="results({location: searchTerm})"><i class="fa fa-search" aria-hidden="true"></i>
+  <a  id="submit" ng-click="setSearchLocation(searchTerm)" ui-sref="results({location: searchTerm})"><i class="fa fa-search" aria-hidden="true"></i>
 </a>
+
+
 </div>
 </div>
 

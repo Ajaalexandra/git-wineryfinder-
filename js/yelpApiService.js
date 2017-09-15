@@ -2,10 +2,30 @@ angular.module('myApp').service('yelpApiService', function($http){
 
 this.test = "hello world";
 
-this.cityQuery;
+var cityQuery = '';
+
+this.setSearchLocation = function(userInput) {
+  console.log('set search location', userInput)
+  cityQuery = userInput;
+}
+
 
 this.changeCity = function(city) {
-  this.cityQuery = city;
+  cityQuery = city;
+}
+
+this.getCity = function() {
+  return cityQuery;
+}
+
+var id= '';
+
+this.changeid = function(userInput) {
+    id = userInput;
+}
+
+this.getid = function() {
+  return id;
 }
 
 var client_secret = 'client_secret= PmJ8zLhWQ82TlRjnqrvmzkZm6KMO5dVlTcAtQ6sxifLL9BHCxJDax6WiylZe2WaS';
@@ -25,13 +45,11 @@ var client_secret = 'client_secret= PmJ8zLhWQ82TlRjnqrvmzkZm6KMO5dVlTcAtQ6sxifLL
 
 
   this.getYelpData().then(function(response){
-    console.log('yelp response:', response);
   })
 
 
 ////////// Yelp Reviews
 this.getYelpReviews = function(YelpBusinessId){
-  console.log('test123');
 
   return $http.post('http://dogcompanydtx.com/api/proxyServer', {
     base_url: 'https://api.yelp.com/v3/businesses/'+ YelpBusinessId + '/reviews?',
