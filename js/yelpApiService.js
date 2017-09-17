@@ -19,9 +19,15 @@ this.getCity = function() {
 }
 
 var id= '';
-
+var winery = '';
 this.changeid = function(userInput) {
-    id = userInput;
+    id = userInput.id;
+    console.log(userInput.name);
+    winery = userInput.name;
+}
+
+this.getWinery = function() {
+  return winery;
 }
 
 this.getid = function() {

@@ -9,7 +9,7 @@
   <ul class="winery-list">
     <li ng-repeat="winery in wineries">
 
-      <div ng-click="setid(winery.id)" ui-sref="details">
+      <div ng-click="setid(winery)" ui-sref="details">
         <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
         <center>
       {{ winery.name }}

@@ -1,14 +1,24 @@
+
+<div class="details-container">
+</div>
+
+
 <!-- {{reviews.}} -->
 <center>
+<div id='reviews-container'>
+  <h1 class="winery-name">{{winery}}</h1>
+  <ul id='reviews' ng-repeat= "review in reviews">
+    <li class='review-item'>Review: {{review.text}}
+      <br>
+      <a target="_blank" class="detailURL" href="{{review.url}}">More Info.</a>
+      <br>
+      Rating: {{review.rating}}
 
-<ul ng-repeat= "review in reviews">
-  <li>Review: {{review.text}}</li>
+    </li>
 
-  <a target="_blank" class="detailURL" href="{{review.url}}">More Info.</a>
+    <br>
+  </ul>
 
-  <li>Rating: {{review.rating}}</li>
-  <br>
-</ul>
-
-<button type="button" name="button"  ui-sref="results"> Back to map</button>
+  <button type="button" name="button"  ui-sref="results"> Back to map</button>
+</div>
 </center>
