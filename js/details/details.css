@@ -1,0 +1,107 @@
+
+
+
+
+.winery-img {
+  height: 200px;
+
+
+}
+
+.detailsInfo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.review-item{
+  color:rgb(242, 237, 227) ;
+
+  padding: 10px;
+  border-radius: 12px;
+  text-shadow: 1px 3px 6px rgba(0, 0, 0, .5);
+
+}
+
+
+.details-container {
+  background-image: url("../../vineyard copy.jpg");
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: center;
+  /*opacity: 0.5;*/
+  filter: blur(3px);
+
+}
+
+
+
+
+#reviews-container {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  /*background-color: rgba(90, 80, 2, .5);*/
+  height: 100vh;
+  padding-top: 50px;
+  font-family: 'Raleway';
+  width: 700px;
+}
+
+.details-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right,rgba(90, 80, 2, .5),rgba(90, 80, 2, .5) 40%, transparent);
+
+}
+
+.winery-name {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: rgba(31, 25, 0, .7)
+}
+
+.wineryInfo {
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  color: rgba(31, 25, 0, .7)
+}
+
+.wineryInfo-item {
+  width: 100%;
+  text-align: start;
+}
+
+.detailURL{
+  color: rgb(210, 187, 137);
+}
+
+.backToMap {
+
+    color: rgba(88, 77, 7, 1);
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #D0B484 ;
+    padding: 10px;
+    width: 120px;
+    border: none;
+    border-radius: 12px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 2px, 2px, 10px, 10px rgba(88, 77, 7, 1)
+
+}
+.backToMap:hover {
+    background-color: rgba(88, 77, 7, 1);
+    color: #D0B484;
+}

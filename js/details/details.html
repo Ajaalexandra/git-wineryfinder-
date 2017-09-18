@@ -5,8 +5,21 @@
 
 <!-- {{reviews.}} -->
 <center>
+
 <div id='reviews-container'>
-  <h1 class="winery-name">{{winery}}</h1>
+  <h1 class="winery-name">{{winery.name}}</h1>
+  <div class="detailsInfo-container">
+    <img class="winery-img" ng-src="{{winery.image_url}}" />
+    <div class="wineryInfo">
+      <li class="wineryInfo-item">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        {{ winery.display_phone }}
+      </li>
+      <li class="wineryInfo-item">Overall Rating:{{ winery.rating }}</li>
+      <li class="wineryInfo-item">Price:{{ winery.price }}</li>
+      <li class="wineryInfo-item">Review Count:{{winery.review_count}}</li>
+    </div>
+  </div>
   <ul id='reviews' ng-repeat= "review in reviews">
     <li class='review-item'>Review: {{review.text}}
       <br>
@@ -19,6 +32,6 @@
     <br>
   </ul>
 
-  <button type="button" name="button"  ui-sref="results"> Back to map</button>
+  <button type="button" name="button" class="backToMap" ui-sref="results"> Back to map</button>
 </div>
 </center>

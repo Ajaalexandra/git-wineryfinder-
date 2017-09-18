@@ -4,8 +4,14 @@ this.test = "hello world";
 
 var cityQuery = '';
 
+if ( localStorage.getItem("cityQuery") ) {
+  cityQuery = localStorage.getItem("cityQuery")
+}
+
+
 this.setSearchLocation = function(userInput) {
-  console.log('set search location', userInput)
+  localStorage.setItem("cityQuery", userInput)
+  console.log("stored item")
   cityQuery = userInput;
 }
 
@@ -18,21 +24,17 @@ this.getCity = function() {
   return cityQuery;
 }
 
-var id= '';
 var winery = '';
-this.changeid = function(userInput) {
-    id = userInput.id;
-    console.log(userInput.name);
-    winery = userInput.name;
+this.setSelectedWinery = function(userInput) {
+  console.log("winery selected", userInput)
+    winery = userInput;
 }
 
 this.getWinery = function() {
   return winery;
 }
 
-this.getid = function() {
-  return id;
-}
+
 
 var client_secret = 'client_secret= PmJ8zLhWQ82TlRjnqrvmzkZm6KMO5dVlTcAtQ6sxifLL9BHCxJDax6WiylZe2WaS';
   var client_id = 'client_id=vGZGeVRetP7WWU9j6tldtg';

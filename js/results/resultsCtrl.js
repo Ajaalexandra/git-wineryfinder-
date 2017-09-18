@@ -2,9 +2,13 @@ angular.module('myApp').controller('resultsCtrl', function($scope, yelpApiServic
 
   var map = document.getElementById('map')
 
-  $scope.setid = yelpApiService.changeid;
+  $scope.setSelectedWinery = yelpApiService.setSelectedWinery;
 
   $scope.getYelpData = function() {
+    if( !yelpApiService.getCity()){
+      return;
+    }
+
     yelpApiService.getYelpData(yelpApiService.getCity())
       .then(function(response){
           $scope.wineries = response.data.businesses;
@@ -22,8 +26,11 @@ angular.module('myApp').controller('resultsCtrl', function($scope, yelpApiServic
 
   var address = yelpApiService.getCity()
 
+  if( yelpApiService.getCity()) {
+   mapsService.setMap(map);
+  }
 
-mapsService.setMap(map)
+
 
 
 

@@ -1,5 +1,8 @@
 
 <div class="main-container">
+  <div class="empty-container">
+
+  </div>
 
 
 
@@ -7,8 +10,8 @@
 
 
  <input class="searchBar" type="text" ng-model="searchTerm" placeholder="Search By Location">
-  <a  id="submit" ng-click="setSearchLocation(searchTerm)" ui-sref="results({location: searchTerm})"><i class="fa fa-search" aria-hidden="true"></i>
-  </a>
+  <button  id="submit" ng-click="setSearchLocation(searchTerm)" ui-sref="results({location: searchTerm})"><i class="fa fa-search" aria-hidden="true"></i>
+  </button>
 
 
 </div>

@@ -1,21 +1,27 @@
 <section>
+<div class="searchBar-container">
 
-  <input class="searchBar" type="text" ng-model="searchTerm" placeholder="Search By Location">
-  <button   ng-click="setSearchLocation(searchTerm)">Search!</button>
+
+  <input class="searchBar-results" type="text" ng-model="searchTerm" placeholder="Search By Location">
+  <button class="searchBar-button"  ng-click="setSearchLocation(searchTerm)"><i class="fa fa-search" aria-hidden="true"></i></button>
+</div>
+
   <div id="map_container">
     <div id="map"></div>
   </div>
 
-  <ul class="winery-list">
-    <li ng-repeat="winery in wineries">
 
-      <div ng-click="setid(winery)" ui-sref="details">
+
+  <ul class="winery-list">
+    <li ng-repeat="winery in wineries" class="wineriesList-item">
+
+      <div ng-click="setSelectedWinery(winery)" ui-sref="details">
         <img ng-src="{{winery.image_url}}" alt="" style="height: 200px; width:  200px">
         <center>
-      {{ winery.name }}
-      <br>
-      {{ winery.location.city }},
-        {{ winery.location.state }}
+      <p>{{ winery.name }}</p>
+
+      <p class="winery-location">{{ winery.location.city }},
+        {{ winery.location.state }}</p>
       </center>
       </div>
     </li>
