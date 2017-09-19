@@ -52,7 +52,7 @@
 }
 
 .main-container {
-background-image: url("/vineyard.jpg");
+background-image: url("image/vineyard.jpg");
 height: 100vh;
 background-size: cover;
 display: flex;
